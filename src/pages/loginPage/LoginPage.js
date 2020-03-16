@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import * as path from "../../constants/routes";
+import connect from "react-redux/es/connect/connect";
 import "./stylesLoginPage.css";
+import { login } from "../../store/actions/login";
 
 const LoginPage = (props) => {
   const [error, serError] = useState(false);
@@ -11,6 +13,7 @@ const LoginPage = (props) => {
     serError(false);
     setUserName(e.target.value);
   };
+
   const handlePassword = (e) => {
     serError(false);
     setPassword(e.target.value);
@@ -18,8 +21,10 @@ const LoginPage = (props) => {
 
   const login = (e) => {
     e.preventDefault();
+    const { login } = props;
     if (userName === "admin" && password === "12345") {
       window.localStorage.setItem("auth", true);
+      login();
       props.history.push(path.PROFILE);
     } else {
       serError(true);
@@ -54,7 +59,11 @@ const LoginPage = (props) => {
                 />
               </div>
             </div>
-            {error ? <span>Error</span> : null}
+            {error ? (
+              <span className="error">
+                The username or password you entered is incorrect
+              </span>
+            ) : null}
           </form>
         </div>
         <footer className="card-footer login_card_footer">
@@ -67,4 +76,7 @@ const LoginPage = (props) => {
   );
 };
 
-export default LoginPage;
+const mapDispatchToProps = {
+  login
+};
+export default connect(null, mapDispatchToProps)(LoginPage);

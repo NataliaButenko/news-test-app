@@ -17,3 +17,7 @@
   align-items: center;
   padding: 5px;
 }
+
+.error {
+  color: #f14667;
+}

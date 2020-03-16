@@ -1,3 +1,7 @@
+.fullheight {
+  height: 100vh;
+}
+
 .news_wrapper {
   display: flex;
   flex-direction: column;
@@ -8,7 +12,6 @@
 .news_card {
   max-width: 800px;
   min-width: 600px;
-  /* max-height: 500px; */
   margin: 15px 0px;
 }
 
