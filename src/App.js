@@ -7,7 +7,7 @@ import LoginPage from "./pages/loginPage/LoginPage";
 import HomePage from "./pages/homePage/HomePage";
 import NewsPage from "./pages/newsPage/NewsPage";
 import ProfilePage from "./pages/profilePage/ProfilePage";
-import Main from "./components/Main";
+import Main from "./components/main/Main";
 import Loader from "./components/loader/Loader";
 import Header from "./components/header/Header";
 import { login } from "./store/actions/login";

@@ -8,3 +8,10 @@
 .profile_card {
   width: 400px;
 }
+
+@media screen and (max-width: 400px) {
+  .profile_card {
+    width: 100%;
+    min-width: 100%;
+  }
+}

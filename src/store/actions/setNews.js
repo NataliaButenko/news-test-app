@@ -9,7 +9,7 @@ export const setNewsAsync = () => {
       payload: true
     });
     let url =
-      "http://newsapi.org/v2/everything?q=bitcoin&from=2020-02-16&sortBy=publishedAt&apiKey=b55953e9fe9f4326817dde384d22c912";
+      "http://newsapi.org/v2/everything?q=bitcoin&from=2020-02-17&sortBy=publishedAt&apiKey=5b3709c9f4bc424b9747bae0645264d4";
     let req = new Request(url);
     return fetch(req)
       .then(function(response) {
